@@ -1,0 +1,81 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		String str="Sujeetu";
+		
+		for(int i=0;i<str.length();i++){
+		    for(int j=i+1;j<str.length();j++){
+		        if(str.charAt(i)==str.charAt(j)){
+		            System.out.print(str.charAt(i)+" ");
+		            break;
+		        }
+		    }
+		}
+	}
+}
+
+Input: Sujeetu
+Output: u e
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Method-2: Using HashSet in o(n)
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		String str="Sujeetu";
+		HashSet<Character>set=new HashSet<>();
+		HashSet<Character>duplicate=new HashSet<>();
+		
+		for(char c:str.toCharArray()){
+		    
+		    if(!set.add(c)){
+		        duplicate.add(c);
+		    }
+		}
+		for(char ch:duplicate){
+		    System.out.print(ch+" ");
+		}
+		   
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Method-3: Using hashing techniqueu
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		String str="sujeetu";
+		
+		int arr[]=new int[26];
+		
+		for(int i=0;i<str.length();i++){
+		    
+		    arr[str.charAt(i)-'a']++;
+		}
+		
+		for(int i=0;i<26;i++){
+		    if(arr[i]>1)
+		    System.out.print((char)(i+'a')+" ");
+		}
+		   
+	}
+}
+
+Input: sujeetu
+Output: e u
