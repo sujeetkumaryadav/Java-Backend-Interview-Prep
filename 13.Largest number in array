@@ -1,0 +1,21 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	int arr[]={10,20,40,30,80,50};
+	int largest=Integer.MIN_VALUE;
+	for(int ele: arr){
+	    if(ele>largest){
+	        largest=ele;
+	    }
+	}
+ System.out.println(largest);
+	
+	}
+}
+
+Output: 80
