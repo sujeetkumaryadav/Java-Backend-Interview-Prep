@@ -6,34 +6,34 @@ class Codechef
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
-	 
-	 
-	 Scanner sc=new Scanner(System.in);
-	 String str=sc.next();
-	 for(int i=0;i<str.length();i++){
-	     
-	     int count=0;
-	     
-	     for(int j=0;j<str.length();j++){
-	         
-	         if(str.charAt(j)==str.charAt(i)){
-	         count++;
-	         }
-	     }
-	      System.out.println(str.charAt(i)+"-"+count);
-	      
-	 }
+	Scanner sc=new Scanner(System.in);
+	String str=sc.nextLine();
+	HashSet<Character>set=new HashSet<>();
+	for(int i=0;i<str.length();i++){
+	    if(set.contains(str.charAt(i))){
+	        continue;
+	    }
+	    int count=0;
+	    for(int j=0;j<str.length();j++){
+	        if(str.charAt(i)==str.charAt(j)){
+	            count++;
+	        }
+	        
+	    }
+	    
+	    System.out.println(str.charAt(i)+": "+count);
+	    set.add(str.charAt(i));
+	}
 
-   sc.close();
 	}
 }
 
+
 Input: java
 output:
-j-1
-a-2
-v-1
-a-2
+j: 1
+a: 2
+v: 1
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
